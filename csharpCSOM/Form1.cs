@@ -52,5 +52,24 @@ namespace csharpCSOM
             }
 
         }
+
+        private void btnSelectFields_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClientContext("http://intranet.shpdev.com"))
+            {
+                var lists = context.Web.Lists;
+                context.Load(context.Web, w => w.Title);
+                context.Load(lists,l=>l.Include(p=>p.Title));
+                context.ExecuteQuery();
+                listBox1.Items.Clear();
+                listBox1.Items.Add(context.Web.Title);
+                foreach (var item in lists)
+                {
+                    listBox1.Items.Add(item.Title);
+                }
+
+            }
+
+        }
     }
 }

@@ -30,13 +30,22 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnSelectFields = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnSelectFields = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nestedIncludesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -54,8 +63,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnSelectFields);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Size = new System.Drawing.Size(407, 341);
-            this.splitContainer1.SplitterDistance = 279;
+            this.splitContainer1.Size = new System.Drawing.Size(671, 306);
+            this.splitContainer1.SplitterDistance = 459;
             this.splitContainer1.TabIndex = 0;
             // 
             // listBox1
@@ -64,8 +73,18 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(279, 341);
+            this.listBox1.Size = new System.Drawing.Size(459, 306);
             this.listBox1.TabIndex = 1;
+            // 
+            // btnSelectFields
+            // 
+            this.btnSelectFields.Location = new System.Drawing.Point(14, 82);
+            this.btnSelectFields.Name = "btnSelectFields";
+            this.btnSelectFields.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectFields.TabIndex = 2;
+            this.btnSelectFields.Text = "select fields";
+            this.btnSelectFields.UseVisualStyleBackColor = true;
+            this.btnSelectFields.Click += new System.EventHandler(this.btnSelectFields_Click);
             // 
             // button2
             // 
@@ -87,28 +106,70 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnSelectFields
+            // menuStrip1
             // 
-            this.btnSelectFields.Location = new System.Drawing.Point(14, 82);
-            this.btnSelectFields.Name = "btnSelectFields";
-            this.btnSelectFields.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectFields.TabIndex = 2;
-            this.btnSelectFields.Text = "select fields";
-            this.btnSelectFields.UseVisualStyleBackColor = true;
-            this.btnSelectFields.Click += new System.EventHandler(this.btnSelectFields_Click);
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actionsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(671, 96);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // actionsToolStripMenuItem
+            // 
+            this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nestedIncludesToolStripMenuItem});
+            this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.actionsToolStripMenuItem.Text = "Actions";
+            // 
+            // nestedIncludesToolStripMenuItem
+            // 
+            this.nestedIncludesToolStripMenuItem.Name = "nestedIncludesToolStripMenuItem";
+            this.nestedIncludesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.nestedIncludesToolStripMenuItem.Text = "Nested includes";
+            this.nestedIncludesToolStripMenuItem.Click += new System.EventHandler(this.nestedIncludesToolStripMenuItem_Click);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.menuStrip1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
+            this.splitContainer2.Size = new System.Drawing.Size(671, 406);
+            this.splitContainer2.SplitterDistance = 96;
+            this.splitContainer2.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 341);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(671, 406);
+            this.Controls.Add(this.splitContainer2);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "CSOM SharePoint Dev";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,6 +181,10 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSelectFields;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nestedIncludesToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }
 

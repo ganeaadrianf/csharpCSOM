@@ -37,6 +37,10 @@
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nestedIncludesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.cAMLQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataBindingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchExceptionHandlingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,7 +67,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnSelectFields);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Size = new System.Drawing.Size(671, 306);
+            this.splitContainer1.Size = new System.Drawing.Size(671, 370);
             this.splitContainer1.SplitterDistance = 459;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -73,7 +77,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(459, 306);
+            this.listBox1.Size = new System.Drawing.Size(459, 370);
             this.listBox1.TabIndex = 1;
             // 
             // btnSelectFields
@@ -113,17 +117,21 @@
             this.actionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(671, 96);
+            this.menuStrip1.Size = new System.Drawing.Size(671, 32);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // actionsToolStripMenuItem
             // 
             this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nestedIncludesToolStripMenuItem});
+            this.nestedIncludesToolStripMenuItem,
+            this.cAMLQueryToolStripMenuItem,
+            this.dataBindingToolStripMenuItem,
+            this.addAListToolStripMenuItem,
+            this.batchExceptionHandlingToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.actionsToolStripMenuItem.Text = "Actions";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
+            this.actionsToolStripMenuItem.Text = "CSOM";
             // 
             // nestedIncludesToolStripMenuItem
             // 
@@ -147,8 +155,36 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
             this.splitContainer2.Size = new System.Drawing.Size(671, 406);
-            this.splitContainer2.SplitterDistance = 96;
+            this.splitContainer2.SplitterDistance = 32;
             this.splitContainer2.TabIndex = 2;
+            // 
+            // cAMLQueryToolStripMenuItem
+            // 
+            this.cAMLQueryToolStripMenuItem.Name = "cAMLQueryToolStripMenuItem";
+            this.cAMLQueryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.cAMLQueryToolStripMenuItem.Text = "CAML Query";
+            this.cAMLQueryToolStripMenuItem.Click += new System.EventHandler(this.cAMLQueryToolStripMenuItem_Click);
+            // 
+            // dataBindingToolStripMenuItem
+            // 
+            this.dataBindingToolStripMenuItem.Name = "dataBindingToolStripMenuItem";
+            this.dataBindingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.dataBindingToolStripMenuItem.Text = "Data binding";
+            this.dataBindingToolStripMenuItem.Click += new System.EventHandler(this.dataBindingToolStripMenuItem_Click);
+            // 
+            // addAListToolStripMenuItem
+            // 
+            this.addAListToolStripMenuItem.Name = "addAListToolStripMenuItem";
+            this.addAListToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.addAListToolStripMenuItem.Text = "Add a list";
+            this.addAListToolStripMenuItem.Click += new System.EventHandler(this.addAListToolStripMenuItem_Click);
+            // 
+            // batchExceptionHandlingToolStripMenuItem
+            // 
+            this.batchExceptionHandlingToolStripMenuItem.Name = "batchExceptionHandlingToolStripMenuItem";
+            this.batchExceptionHandlingToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.batchExceptionHandlingToolStripMenuItem.Text = "Batch Exception Handling";
+            this.batchExceptionHandlingToolStripMenuItem.Click += new System.EventHandler(this.batchExceptionHandlingToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -185,6 +221,10 @@
         private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nestedIncludesToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ToolStripMenuItem cAMLQueryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataBindingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addAListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem batchExceptionHandlingToolStripMenuItem;
     }
 }
 

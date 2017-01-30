@@ -36,11 +36,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nestedIncludesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.cAMLQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataBindingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchExceptionHandlingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEditListItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateListItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addALibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.addSampleDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,7 +119,8 @@
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actionsToolStripMenuItem});
+            this.actionsToolStripMenuItem,
+            this.librariesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(671, 32);
@@ -128,17 +134,77 @@
             this.cAMLQueryToolStripMenuItem,
             this.dataBindingToolStripMenuItem,
             this.addAListToolStripMenuItem,
-            this.batchExceptionHandlingToolStripMenuItem});
+            this.batchExceptionHandlingToolStripMenuItem,
+            this.addEditListItemToolStripMenuItem,
+            this.updateListItemToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
-            this.actionsToolStripMenuItem.Text = "CSOM";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(42, 28);
+            this.actionsToolStripMenuItem.Text = "Lists";
             // 
             // nestedIncludesToolStripMenuItem
             // 
             this.nestedIncludesToolStripMenuItem.Name = "nestedIncludesToolStripMenuItem";
-            this.nestedIncludesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.nestedIncludesToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.nestedIncludesToolStripMenuItem.Text = "Nested includes";
             this.nestedIncludesToolStripMenuItem.Click += new System.EventHandler(this.nestedIncludesToolStripMenuItem_Click);
+            // 
+            // cAMLQueryToolStripMenuItem
+            // 
+            this.cAMLQueryToolStripMenuItem.Name = "cAMLQueryToolStripMenuItem";
+            this.cAMLQueryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.cAMLQueryToolStripMenuItem.Text = "CAML Query";
+            this.cAMLQueryToolStripMenuItem.Click += new System.EventHandler(this.cAMLQueryToolStripMenuItem_Click);
+            // 
+            // dataBindingToolStripMenuItem
+            // 
+            this.dataBindingToolStripMenuItem.Name = "dataBindingToolStripMenuItem";
+            this.dataBindingToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.dataBindingToolStripMenuItem.Text = "Data binding";
+            this.dataBindingToolStripMenuItem.Click += new System.EventHandler(this.dataBindingToolStripMenuItem_Click);
+            // 
+            // addAListToolStripMenuItem
+            // 
+            this.addAListToolStripMenuItem.Name = "addAListToolStripMenuItem";
+            this.addAListToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.addAListToolStripMenuItem.Text = "Add a list";
+            this.addAListToolStripMenuItem.Click += new System.EventHandler(this.addAListToolStripMenuItem_Click);
+            // 
+            // batchExceptionHandlingToolStripMenuItem
+            // 
+            this.batchExceptionHandlingToolStripMenuItem.Name = "batchExceptionHandlingToolStripMenuItem";
+            this.batchExceptionHandlingToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.batchExceptionHandlingToolStripMenuItem.Text = "Batch Exception Handling";
+            this.batchExceptionHandlingToolStripMenuItem.Click += new System.EventHandler(this.batchExceptionHandlingToolStripMenuItem_Click);
+            // 
+            // addEditListItemToolStripMenuItem
+            // 
+            this.addEditListItemToolStripMenuItem.Name = "addEditListItemToolStripMenuItem";
+            this.addEditListItemToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.addEditListItemToolStripMenuItem.Text = "Add/Edit list item";
+            this.addEditListItemToolStripMenuItem.Click += new System.EventHandler(this.addEditListItemToolStripMenuItem_Click);
+            // 
+            // updateListItemToolStripMenuItem
+            // 
+            this.updateListItemToolStripMenuItem.Name = "updateListItemToolStripMenuItem";
+            this.updateListItemToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.updateListItemToolStripMenuItem.Text = "Update list item";
+            this.updateListItemToolStripMenuItem.Click += new System.EventHandler(this.updateListItemToolStripMenuItem_Click);
+            // 
+            // librariesToolStripMenuItem
+            // 
+            this.librariesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addALibraryToolStripMenuItem,
+            this.addSampleDocumentToolStripMenuItem});
+            this.librariesToolStripMenuItem.Name = "librariesToolStripMenuItem";
+            this.librariesToolStripMenuItem.Size = new System.Drawing.Size(63, 28);
+            this.librariesToolStripMenuItem.Text = "Libraries";
+            // 
+            // addALibraryToolStripMenuItem
+            // 
+            this.addALibraryToolStripMenuItem.Name = "addALibraryToolStripMenuItem";
+            this.addALibraryToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.addALibraryToolStripMenuItem.Text = "Add a library";
+            this.addALibraryToolStripMenuItem.Click += new System.EventHandler(this.addALibraryToolStripMenuItem_Click);
             // 
             // splitContainer2
             // 
@@ -158,33 +224,12 @@
             this.splitContainer2.SplitterDistance = 32;
             this.splitContainer2.TabIndex = 2;
             // 
-            // cAMLQueryToolStripMenuItem
+            // addSampleDocumentToolStripMenuItem
             // 
-            this.cAMLQueryToolStripMenuItem.Name = "cAMLQueryToolStripMenuItem";
-            this.cAMLQueryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.cAMLQueryToolStripMenuItem.Text = "CAML Query";
-            this.cAMLQueryToolStripMenuItem.Click += new System.EventHandler(this.cAMLQueryToolStripMenuItem_Click);
-            // 
-            // dataBindingToolStripMenuItem
-            // 
-            this.dataBindingToolStripMenuItem.Name = "dataBindingToolStripMenuItem";
-            this.dataBindingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.dataBindingToolStripMenuItem.Text = "Data binding";
-            this.dataBindingToolStripMenuItem.Click += new System.EventHandler(this.dataBindingToolStripMenuItem_Click);
-            // 
-            // addAListToolStripMenuItem
-            // 
-            this.addAListToolStripMenuItem.Name = "addAListToolStripMenuItem";
-            this.addAListToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.addAListToolStripMenuItem.Text = "Add a list";
-            this.addAListToolStripMenuItem.Click += new System.EventHandler(this.addAListToolStripMenuItem_Click);
-            // 
-            // batchExceptionHandlingToolStripMenuItem
-            // 
-            this.batchExceptionHandlingToolStripMenuItem.Name = "batchExceptionHandlingToolStripMenuItem";
-            this.batchExceptionHandlingToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.batchExceptionHandlingToolStripMenuItem.Text = "Batch Exception Handling";
-            this.batchExceptionHandlingToolStripMenuItem.Click += new System.EventHandler(this.batchExceptionHandlingToolStripMenuItem_Click);
+            this.addSampleDocumentToolStripMenuItem.Name = "addSampleDocumentToolStripMenuItem";
+            this.addSampleDocumentToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.addSampleDocumentToolStripMenuItem.Text = "Add sample document";
+            this.addSampleDocumentToolStripMenuItem.Click += new System.EventHandler(this.addSampleDocumentToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
@@ -225,6 +270,11 @@
         private System.Windows.Forms.ToolStripMenuItem dataBindingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addAListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem batchExceptionHandlingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEditListItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateListItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem librariesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addALibraryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addSampleDocumentToolStripMenuItem;
     }
 }
 

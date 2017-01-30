@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace csharpCSOM
 {
@@ -75,6 +76,7 @@ namespace csharpCSOM
 
         private void nestedIncludesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             using (var context = new ClientContext("http://intranet.shpdev.com"))
             {
                 var lists = context.Web.Lists;
@@ -178,12 +180,12 @@ namespace csharpCSOM
                 {
                     using (scope.StartTry())
                     {
-                        list = web.Lists.GetByTitle("My Announcements");
+                        list = web.Lists.GetByTitle("Tasks");
                         context.Load(list);
                     }
                     using (scope.StartCatch())
                     {
-                        list = web.Lists.Add(new ListCreationInformation { Title = "My Announcements", TemplateType = (int)ListTemplateType.Announcements, QuickLaunchOption = QuickLaunchOptions.On });
+                        list = web.Lists.Add(new ListCreationInformation { Title = "Tasks", TemplateType = (int)ListTemplateType.Tasks, QuickLaunchOption = QuickLaunchOptions.On });
                     }
                     using (scope.StartFinally())
                     {
@@ -196,6 +198,117 @@ namespace csharpCSOM
                 var status = scope.HasException ? "List successfully created" : "List loaded";
                 listBox1.Items.Clear();
                 listBox1.Items.Add(status);
+            }
+        }
+
+        private void addEditListItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            using (var context = new ClientContext("http://intranet.shpdev.com"))
+            {
+                try
+                {
+                    var web = context.Web;
+                    var rand = new Random();
+                    var list = web.Lists.GetByTitle("Tasks");
+                    var item = new ListItemCreationInformation();
+                    var addedItem = list.AddItem(item);
+                    addedItem["Title"] = "Item " + rand.Next(1, 1000);
+                    addedItem["DueDate"] = DateTime.Now.AddDays(7);
+                    addedItem["PercentComplete"] = 0;
+                    addedItem["AssignedTo"] = context.Web.CurrentUser;
+                    addedItem.Update();
+                    context.ExecuteQuery();
+                    listBox1.Items.Add("Item added");
+                }
+                catch (Exception xcp) {
+                    listBox1.Items.Add("Operation failed:"+xcp.Message);
+                }
+
+            }
+        }
+
+        private void updateListItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            using (var context = new ClientContext("http://intranet.shpdev.com"))
+            {
+                try
+                {
+                    var web = context.Web;
+                    var rand = new Random();
+                    var list = web.Lists.GetByTitle("Tasks");
+                   
+                    var firstItems = list.GetItems(new CamlQuery { ViewXml="<View><RowLimit>1</RowLimit></View>"});
+                    context.Load(firstItems);
+                    context.ExecuteQuery();
+                    var firstItem=firstItems.First();
+                    firstItem["PercentComplete"] = rand.Next(1, 100);
+                    firstItem.Update();
+                    context.ExecuteQuery();
+                    listBox1.Items.Add("Item updated");
+                }
+                catch (Exception xcp)
+                {
+                    listBox1.Items.Add("Operation failed:" + xcp.Message);
+                }
+
+            }
+        }
+
+        private void addALibraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            using(var conetxt=new ClientContext("http://intranet.shpdev.com"))
+            {
+                try
+                {
+                    var web = conetxt.Web;
+                    var lci = new ListCreationInformation() { Title = "Project Documents", QuickLaunchOption = QuickLaunchOptions.On, TemplateType = (int)ListTemplateType.DocumentLibrary };
+                    var lib = web.Lists.Add(lci);
+                    lib.Fields.AddFieldAsXml("<Field Type=\"Number\" DisplayName=\"Year\" Min=\"2000\" Max=\"2100\" Decimals=\"0\" StaticName=\"Year\" Name=\"Year\" />", true, AddFieldOptions.DefaultValue);
+                    lib.Fields.AddFieldAsXml("<Field Type=\"User\" DisplayName=\"Coordinator\" List=\"UserInfo\" ShowField=\"ImnName\" UserSelectionMode=\"PeopleOnly\" UserSelectionScope=\"0\" StaticName=\"Coordinator\" Name=\"Coordinator\" />", true, AddFieldOptions.DefaultValue);
+
+                    conetxt.Load(web.Lists);
+                    conetxt.ExecuteQuery();
+                    listBox1.Items.Add("Document librarry created");
+                }
+                catch (Exception xcp)
+                {
+                    listBox1.Items.Add("Operation failed:" + xcp.Message);
+                }
+
+                
+            }       
+        }
+
+     
+
+        private void addSampleDocumentToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            using (var context = new ClientContext("http://intranet.shpdev.com"))
+            {
+                try
+                {
+                    var list = context.Web.Lists.GetByTitle("Project Documents");
+                    var fci = new FileCreationInformation();
+                    fci.Content = System.IO.File.ReadAllBytes(@"C:\Downloads\Sample.docx");
+                    fci.Url = "Sample upload.docx";
+                    var file = list.RootFolder.Files.Add(fci);
+                    var item = file.ListItemAllFields;
+                    item["Year"] = System.DateTime.Now.Year;
+                    item["Coordinator"] = context.Web.CurrentUser;
+                    item.Update();
+                    listBox1.Items.Add("File uploaded successfuly");
+                    context.ExecuteQuery();
+                }
+                catch (Exception xcp)
+                {
+                    listBox1.Items.Add(xcp.Message);
+
+                }
+
             }
         }
     }

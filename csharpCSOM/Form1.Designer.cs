@@ -44,8 +44,15 @@
             this.updateListItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addALibraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.addSampleDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taxonomyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createTermsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createLibWithTaxFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadADocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permissionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.userProfilePropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,7 +127,9 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionsToolStripMenuItem,
-            this.librariesToolStripMenuItem});
+            this.librariesToolStripMenuItem,
+            this.taxonomyToolStripMenuItem,
+            this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(671, 32);
@@ -206,6 +215,60 @@
             this.addALibraryToolStripMenuItem.Text = "Add a library";
             this.addALibraryToolStripMenuItem.Click += new System.EventHandler(this.addALibraryToolStripMenuItem_Click);
             // 
+            // addSampleDocumentToolStripMenuItem
+            // 
+            this.addSampleDocumentToolStripMenuItem.Name = "addSampleDocumentToolStripMenuItem";
+            this.addSampleDocumentToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.addSampleDocumentToolStripMenuItem.Text = "Add sample document";
+            this.addSampleDocumentToolStripMenuItem.Click += new System.EventHandler(this.addSampleDocumentToolStripMenuItem_Click_1);
+            // 
+            // taxonomyToolStripMenuItem
+            // 
+            this.taxonomyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createTermsToolStripMenuItem,
+            this.createLibWithTaxFieldToolStripMenuItem,
+            this.uploadADocumentToolStripMenuItem});
+            this.taxonomyToolStripMenuItem.Name = "taxonomyToolStripMenuItem";
+            this.taxonomyToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
+            this.taxonomyToolStripMenuItem.Text = "Taxonomy";
+            // 
+            // createTermsToolStripMenuItem
+            // 
+            this.createTermsToolStripMenuItem.Name = "createTermsToolStripMenuItem";
+            this.createTermsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.createTermsToolStripMenuItem.Text = "Create terms";
+            this.createTermsToolStripMenuItem.Click += new System.EventHandler(this.createTermsToolStripMenuItem_Click);
+            // 
+            // createLibWithTaxFieldToolStripMenuItem
+            // 
+            this.createLibWithTaxFieldToolStripMenuItem.Name = "createLibWithTaxFieldToolStripMenuItem";
+            this.createLibWithTaxFieldToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.createLibWithTaxFieldToolStripMenuItem.Text = "Create lib with tax field";
+            this.createLibWithTaxFieldToolStripMenuItem.Click += new System.EventHandler(this.createLibWithTaxFieldToolStripMenuItem_Click);
+            // 
+            // uploadADocumentToolStripMenuItem
+            // 
+            this.uploadADocumentToolStripMenuItem.Name = "uploadADocumentToolStripMenuItem";
+            this.uploadADocumentToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.uploadADocumentToolStripMenuItem.Text = "Upload a document";
+            this.uploadADocumentToolStripMenuItem.Click += new System.EventHandler(this.uploadADocumentToolStripMenuItem_Click);
+            // 
+            // usersToolStripMenuItem
+            // 
+            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.permissionsToolStripMenuItem,
+            this.userProfilePropertiesToolStripMenuItem});
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 28);
+            this.usersToolStripMenuItem.Text = "Users";
+            // 
+            // permissionsToolStripMenuItem
+            // 
+            this.permissionsToolStripMenuItem.Name = "permissionsToolStripMenuItem";
+            this.permissionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.permissionsToolStripMenuItem.Text = "Permissions";
+            this.permissionsToolStripMenuItem.Click += new System.EventHandler(this.permissionsToolStripMenuItem_Click);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -224,12 +287,12 @@
             this.splitContainer2.SplitterDistance = 32;
             this.splitContainer2.TabIndex = 2;
             // 
-            // addSampleDocumentToolStripMenuItem
+            // userProfilePropertiesToolStripMenuItem
             // 
-            this.addSampleDocumentToolStripMenuItem.Name = "addSampleDocumentToolStripMenuItem";
-            this.addSampleDocumentToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.addSampleDocumentToolStripMenuItem.Text = "Add sample document";
-            this.addSampleDocumentToolStripMenuItem.Click += new System.EventHandler(this.addSampleDocumentToolStripMenuItem_Click_1);
+            this.userProfilePropertiesToolStripMenuItem.Name = "userProfilePropertiesToolStripMenuItem";
+            this.userProfilePropertiesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.userProfilePropertiesToolStripMenuItem.Text = "User Profile Properties";
+            this.userProfilePropertiesToolStripMenuItem.Click += new System.EventHandler(this.userProfilePropertiesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -275,6 +338,13 @@
         private System.Windows.Forms.ToolStripMenuItem librariesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addALibraryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSampleDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem taxonomyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createTermsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createLibWithTaxFieldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uploadADocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permissionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userProfilePropertiesToolStripMenuItem;
     }
 }
 
